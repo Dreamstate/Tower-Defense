@@ -7,6 +7,7 @@ public class TurretMenuUI : MonoBehaviour
     public GameObject menuPanel;
     private Node target;
     public TextMeshProUGUI upgradeCostText;
+    public TextMeshProUGUI sellAmountText;
     public Button upgradeButton;
 
     public void SetTarget(Node _target)
@@ -24,6 +25,8 @@ public class TurretMenuUI : MonoBehaviour
             upgradeButton.interactable = false;
         }
 
+        sellAmountText.text = "$" + target.turretBlueprint.GetSellAmount().ToString();
+
         transform.position = target.GetBuildPosition();
 
 
@@ -38,6 +41,12 @@ public class TurretMenuUI : MonoBehaviour
     public void UpgradeTurret()
     {
         target.UpgradeTurret();
+        BuildManager.instance.DeselectNode();
+    }
+
+    public void SellTurret()
+    {
+        target.SellTurret();
         BuildManager.instance.DeselectNode();
     }
 }

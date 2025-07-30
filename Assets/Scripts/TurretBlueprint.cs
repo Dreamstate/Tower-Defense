@@ -7,4 +7,9 @@ public class TurretBlueprint
     public int cost;
     public GameObject upgradedPrefab;
     public int upgradeCost;
+
+    public int GetSellAmount()
+    {
+        return Mathf.RoundToInt(cost * 0.5f);
+    }
 }
