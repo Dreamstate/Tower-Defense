@@ -18,11 +18,6 @@ public class Shop : MonoBehaviour
         Debug.Log("Selected Turret Selected!");
         buildManager.SelectTurretToBuild(standardTurret);
     }
-    public void SelecteAdvancedTurret()
-    {
-        Debug.Log("Selected Advanced Turret Selected!");
-        buildManager.SelectTurretToBuild(advancedTurret);
-    }
 
     public void SelecteMissileLauncher()
     {
