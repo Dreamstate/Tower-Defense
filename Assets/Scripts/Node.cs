@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.EventSystems;
 using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
@@ -32,14 +31,15 @@ public class Node : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
-        if (!buildManager.CanBuild)
-            return;
 
         if (turret != null)
         {
-            Debug.Log("Node already has a turret. - TODO Display on screen.");
+            buildManager.SelectNode(this);
             return;
         }
+
+        if (!buildManager.CanBuild)
+            return;
 
         buildManager.BuildTurretOn(this);
     }
