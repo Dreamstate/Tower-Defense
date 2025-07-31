@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private bool doMovement = true;
     public float panSpeed = 30f;
     public float panBorderThickness = Screen.height / 20f;
     public float scrollSpeed = 5f;
@@ -22,17 +21,6 @@ public class CameraController : MonoBehaviour
             this.enabled = false; // Disable camera movement when the game is over
             return;
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            doMovement = !doMovement;
-            // Testing what this does
-            Cursor.lockState = doMovement ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !doMovement;
-        }
-
-        if (!doMovement)
-            return;
 
         if ((Input.GetKey(KeyCode.W) || Input.mousePosition.y >= Screen.height - panBorderThickness) &&
             transform.position.z < maxZ)
