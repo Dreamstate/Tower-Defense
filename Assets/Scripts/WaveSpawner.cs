@@ -19,6 +19,12 @@ public class WaveSpawner : MonoBehaviour
         if (EnemiesAlive > 0)
             return; // Don't spawn new enemies if there are still enemies alive
 
+        if (waveIndex > waves.Length - 1)
+        {
+            gameManager.WinLevel();
+            this.enabled = false; // Disable the spawner when all waves are done
+        }
+
         if (countdown <= 0f)
         {
             StartCoroutine(SpawnWave());
@@ -46,11 +52,6 @@ public class WaveSpawner : MonoBehaviour
         }
 
         waveIndex++;
-        if (waveIndex > waves.Length - 1)
-        {
-            gameManager.WinLevel();
-            this.enabled = false; // Disable the spawner when all waves are done
-        }
     }
 
     void SpawnEnemy(GameObject enemyPrefab)
