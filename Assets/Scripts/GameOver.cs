@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI roundsText;
+    public SceneFader sceneFader;
+    public string mainMenuSceneName = "MainMenu";
+
     void OnEnable()
     {
         if (roundsText == null)
@@ -22,7 +25,7 @@ public class GameOver : MonoBehaviour
 
     public void Menu()
     {
-        Debug.Log("Loading Menu...");
+        sceneFader.FadeTo(mainMenuSceneName);
     }
 
 }
