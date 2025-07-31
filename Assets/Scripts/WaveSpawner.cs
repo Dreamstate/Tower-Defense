@@ -12,6 +12,7 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
     public TextMeshProUGUI Text;
     private int waveIndex = 0;
+    public GameManager gameManager;
 
     void Update()
     {
@@ -36,6 +37,8 @@ public class WaveSpawner : MonoBehaviour
 
         Wave wave = waves[waveIndex];
 
+        EnemiesAlive = wave.count;
+
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemyPrefab);
@@ -45,7 +48,7 @@ public class WaveSpawner : MonoBehaviour
         waveIndex++;
         if (waveIndex > waves.Length - 1)
         {
-            Debug.Log("All waves complete!");
+            gameManager.WinLevel();
             this.enabled = false; // Disable the spawner when all waves are done
         }
     }
