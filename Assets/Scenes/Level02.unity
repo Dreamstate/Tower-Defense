@@ -1318,6 +1318,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3549752121796041896, guid: 51c4b2eb6c144f348a894b308b18e5d8, type: 3}
   m_PrefabInstance: {fileID: 121470823}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &137208975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7386791340329715313, guid: 0ad02e36151976f4f8135d56ce72a560, type: 3}
+  m_PrefabInstance: {fileID: 1729180673322686014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea84373fbe5d5c143a9dfd2adc5963bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &139421412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8257,6 +8268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundsText: {fileID: 1000864801}
+  sceneFader: {fileID: 137208975}
+  mainMenuSceneName: MainMenu
 --- !u!95 &774138483
 Animator:
   serializedVersion: 7
@@ -9183,9 +9196,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8a4ac1726f1684a8c9fbeef89c6cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3531748015080503950, guid: 231bcfa14f31148448b4d1b314cb0576, type: 3}
+  waves:
+  - enemyPrefab: {fileID: 5707209505080789920, guid: 231bcfa14f31148448b4d1b314cb0576, type: 3}
+    count: 1
+    rate: 2
+  - enemyPrefab: {fileID: 5707209505080789920, guid: 231bcfa14f31148448b4d1b314cb0576, type: 3}
+    count: 2
+    rate: 2
+  - enemyPrefab: {fileID: 5707209505080789920, guid: 231bcfa14f31148448b4d1b314cb0576, type: 3}
+    count: 5
+    rate: 2
+  - enemyPrefab: {fileID: 5707209505080789920, guid: e32617e877cac0d4196434fd2de75d0e, type: 3}
+    count: 3
+    rate: 1
+  - enemyPrefab: {fileID: 5707209505080789920, guid: 216e1f0dd0f51524da2fe94e2d2fa9b1, type: 3}
+    count: 10
+    rate: 3
   spawnPoint: {fileID: 979041212}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 5
   Text: {fileID: 421361507}
 --- !u!4 &866585554
 Transform:
@@ -9229,8 +9257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c028ea09792404e94e4478d10c2e3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 9999
-  startLives: 20
+  startMoney: 400
+  startLives: 10
 --- !u!114 &866585557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9244,6 +9272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roundsText: {fileID: 1000864801}
+  sceneFader: {fileID: 137208975}
+  mainMenuSceneName: MainMenu
 --- !u!114 &866585558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9270,6 +9300,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 518076152}
+  sceneFader: {fileID: 137208975}
+  mainMenuSceneName: MainMenu
 --- !u!4 &873034058 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2587161075900604397, guid: e73ae882b85f70042a54d1868e0c6993, type: 3}
